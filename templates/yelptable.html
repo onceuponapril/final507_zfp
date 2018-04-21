@@ -1,0 +1,34 @@
+
+<html>
+
+<h1> Tastes of {{city}} </h1>
+
+{{ ERROR }}
+<form action="/lyftlist" method="POST">
+  <label>Step One: pick the restuatant(s) you wanna try:</label>
+
+<table border=1>
+    <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Rating</th>
+        <th>Address</th>
+    </tr>
+    <tr>
+
+      {% for res in list_of_res %}
+    <td><input type="checkbox" name="store" value ="{{res[0]}}"></td>
+        <td>{{res[2]}}</td>
+        <td>{{res[3]}}</td>
+        <td>{{res[4]}}</td>
+        <td>{{res[5]}}</td>
+    </tr>
+{% endfor %}
+</table></br>
+
+<label>Step Two: please enter your departure:</label>
+<input type="text" required name='user_location'><input type="submit" value="Go"/>
+</form>
+
+</html>
