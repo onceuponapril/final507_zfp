@@ -1,6 +1,5 @@
 import unittest
 from fn import *
-
 fn.create_first_table('test.sqlite')
 
 class TestYelpData(unittest.TestCase):
