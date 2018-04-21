@@ -1,0 +1,36 @@
+
+<h1> Prediction of your Foodies' journey </h1>
+<h2>If you care about {{requirement}}, check it out: </h2>
+
+<form action="/lyftupdate" method="POST">
+    You can sort by:<br/>
+    <input type="radio" name="sortby" value="Estimated_miles"/>Distance<br/>
+    <input type="radio" name="sortby" value="Estimated_minutes"/>Waiting time <br/>
+    <input type="radio" name="sortby" value="Estimated_max_cost"/>Cost <br/>
+    <input type="submit" name="update" value='update'/><br>
+    <label>(For your efficiency, the result is ranked from the lowest distance/time/costs)</label>
+
+    <br/>
+    <br/>
+</form>
+
+<table border=1>
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Distance (mile)</th>
+        <th>Waiting time for lyft (minute)</th>
+        <th>Estimated Costs (dollar)</th>
+
+    </tr>
+    <tr>
+      {% for est in update_lyft %}
+    <!-- <td><input type="checkbox" onclick="myFunction()"<td> -->
+        <td>{{est[3]}}</td>
+        <td>{{est[4]}}</td>
+        <td>{{est[6]}}</td>
+        <td>{{est[7]}}</td>
+        <td>{{est[8]}}</td>
+    </tr>
+{% endfor %}
+</table>
