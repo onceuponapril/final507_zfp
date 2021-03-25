@@ -9,7 +9,7 @@ itsdangerous==0.24
 Jinja2==2.10
 lyft-rides==0.2
 MarkupSafe==1.0
-PyYAML==3.12
+PyYAML==5.4
 requests==2.18.4
 urllib3==1.22
 Werkzeug==0.14.1
